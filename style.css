@@ -1,0 +1,20 @@
+body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	height: 160px;
+	width: 160px;
+}
+
+.container > * {
+	flex: 0 0 auto;
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	border: 1px solid white;
+}
