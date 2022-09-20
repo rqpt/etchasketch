@@ -1,20 +1,19 @@
 body {
-	box-sizing: border-box;
 	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .container {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
-	height: 160px;
-	width: 160px;
+	height: 400px;
+	width: 400px;
 }
 
 .container > * {
-	flex: 0 0 auto;
-	width: 10px;
-	height: 10px;
-	background-color: black;
-	border: 1px solid white;
+	width: 6.25%;
+	height: 6.25%;
+	flex: auto;
+	outline: 1px solid black;
 }
