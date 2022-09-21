@@ -9,15 +9,19 @@ body {
 .container {
 	display: flex;
 	flex-flow: row wrap;
-	align-content: stretch;
 	height: 450px;
 	width: 450px;
 }
 
-.tile {
-	width: 10%;
-	height: 10%;
-	flex: 1 0 auto;
+.column {
+	flex: 1;
+	display: flex;
+	flex-flow: column;
+	outline: 1px solid black;
+}
+
+.row {
+	flex: 1;
 	outline: 1px solid black;
 }
 
