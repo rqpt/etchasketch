@@ -1,11 +1,12 @@
 const divCont = document.querySelector('.container');
 
 const sizeButton = document.querySelector('button');
-sizeButton.addEventListener('click', getUserInput);
+sizeButton.addEventListener('click', buildGrid);
 
-function getUserInput() {
-	const userInput = +prompt('Input a number between 1 and 100');
-	if ((typeof userInput !== 'number') || (userInput >= 100)){
+function buildGrid() {
+	divCont.textContent = '';
+	const userInput = +prompt('Input a number from 1 to 100');
+	if ((typeof userInput !== 'number') || (userInput > 100)){
 		alert('Try Again');
 	} else {
 		for (i = 0; i < userInput; i++) {
