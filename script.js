@@ -30,7 +30,11 @@ function activateGrid() {
 	const grid = document.querySelectorAll('.row', '.column');
 	grid.forEach((tile) => {
 		tile.addEventListener('mouseover', e => {
-			e.target.classList.add('blue');
+			e.target.style.cssText = `background-color: rgb(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)});`;
 		});
 	});
+};
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
 };
