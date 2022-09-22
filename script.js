@@ -17,9 +17,9 @@ function buildGrid() {
 		const columns = document.querySelectorAll('.column');
 		columns.forEach((column) => {
 			for (i = 0; i < userInput; i++) {
-				const row = document.createElement('div');
-				row.classList.add('row');
-				column.appendChild(row);
+				const tile = document.createElement('div');
+				tile.classList.add('tile');
+				column.appendChild(tile);
 			}
 		});
 	activateGrid();
@@ -27,12 +27,22 @@ function buildGrid() {
 };
 
 function activateGrid() {
-	const grid = document.querySelectorAll('.row', '.column');
+	const grid = document.querySelectorAll('.tile');
 	grid.forEach((tile) => {
 		tile.addEventListener('mouseover', e => {
+			if (e.target.style.backgroundColor === '') {
 			e.target.style.cssText = `background-color: rgb(${getRandomInt(1, 255)}, ${getRandomInt(1, 255)}, ${getRandomInt(1, 255)});`;
+			} else {
+				const color = e.target.style.backgroundColor;
+				const colorNew = color.slice(4, -1).split(',').map(reduce10);
+				e.target.style.cssText = `background-color: rgb(${colorNew})`;
+			}
 		});
 	});
+};
+
+function reduce10(value) {
+	return value - (value * 0.1);
 };
 
 function getRandomInt(min, max) {

@@ -20,10 +20,6 @@ body {
 	flex-flow: column;
 }
 
-.row {
+.tile {
 	flex: 1;
-}
-
-.blue {
-	background-color: blue;
 }
